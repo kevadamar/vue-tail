@@ -1,9 +1,9 @@
-export const uomStore = {
+export const currencyStore = {
   state: () => ({
-    allUom: [
+    allCurrency: [
       {
         code: 1,
-        label: "SHP",
+        label: "USD",
       },
     ],
   }),

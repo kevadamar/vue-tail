@@ -1,9 +1,9 @@
-export const uomStore = {
+export const chargeStore = {
   state: () => ({
-    allUom: [
+    allCharge: [
       {
         code: 1,
-        label: "SHP",
+        label: "Stuffing",
       },
     ],
   }),
