@@ -38,7 +38,6 @@ export default {
   },
   data: function () {
     return {
-      value: "",
       show: true,
     };
   },

@@ -1,29 +1,11 @@
 # vue-tailwind
 
 ## Project setup
-```
-yarn install
-```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- First clone backend for supporting API **[Backend](https://github.com/kevadamar/L8-App)** and follow instruction installation
+- Clone repo, git clone https://github.com/kevadamar/vue-tail.git
+- cd vue-tail
+- Update base url on .env match with url backend
+- yarn install or npm install
+- yarn serve or npm run serve
+- Enjoyy vue-tail running on http://127.0.0.1:3000 or http://localhost:3000
