@@ -1,13 +1,18 @@
 <template>
   <div>
-    <v-select
-      :class="`${width} style-chooser`"
-      :options="data"
-      :value="value"
-      v-on="$listeners"
-      :placeholder="placeholder"
-      @input="(v) => $emit('update', v)"
-    ></v-select>
+    <ValidationProvider v-slot="{ errors }" :rules="rules">
+      <v-select
+        :class="`${width} style-chooser ${errors.length > 0 ? 'is-error' : ''}`"
+        :options="data"
+        :value="value"
+        v-on="$listeners"
+        :placeholder="placeholder"
+        @input="(v) => $emit('update', v)"
+      ></v-select>
+      <span v-if="showText && errors.length > 0" class="text-red-500 mt-1">{{
+        errors[0]
+      }}</span>
+    </ValidationProvider>
   </div>
 </template>
 
@@ -15,6 +20,14 @@
 export default {
   name: "SearchSelect",
   props: {
+    showText: {
+      type: Boolean,
+      default: false,
+    },
+    rules: {
+      type: String,
+      default: "",
+    },
     data: {
       type: Array,
       required: true,
@@ -39,22 +52,13 @@ export default {
     prop: "value",
     event: "update",
   },
-  watch: {
-    value: function (newValue, oldValue) {
-      console.log(oldValue);
-      this.stateValue = newValue;
-    },
-  },
 };
 </script>
 
 <style>
-:root {
-  --vs-search-input-bg: red;
-}
-.style-chooser {
-  /* margin-bottom: 17px; @kevadamar*/
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+.is-error {
+  border: 2px solid #ef4444;
+  border-radius: 5px;
 }
 
 .style-chooser .vs__search::placeholder,

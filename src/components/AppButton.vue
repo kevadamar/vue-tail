@@ -32,7 +32,7 @@ export default {
     },
     defaultClass: {
       type: String,
-      default: `block text-center text-sm text-slate-500 rounded-lg border-2 hover:cursor-pointer`,
+      default: `block text-center text-sm rounded-lg border-2 hover:cursor-pointer`,
     },
   },
 };

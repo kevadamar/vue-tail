@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto my-10">
-    <button @click="setShow" class="flex w-full pt-2 pb-5">
+    <button @click="setShow" class="flex pt-2 pb-5">
       <span class="text-teal-300"> Cost Detail</span>
       <span>
         <arrow-down :class="`${!show ? '-rotate-90' : ''}`" />
